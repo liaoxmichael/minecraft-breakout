@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Blockout</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-image: url("171177.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-family: 'VT323', monospace;
+      font-size: 2em;
+      text-align: center;
+      color: white;
+    }
+
+    span {
+      color: yellow;
+      text-shadow: 2px 2px olive;
+    }
+
+    .bg {
+      background-color: rgba(0, 0, 0, .5);
+    }
+
+    .emph {
+      color: #55FFFF;
+    }
+
+    ul {
+      list-style-type: none;
+      font-size: 0.8em;
+      text-align: left;
+    }
+
+    button {
+      height: 45px;
+      width: 405px;
+      text-decoration: none;
+      text-align: center;
+      color: white;
+      font-family: 'VT323', monospace;
+      font-size: 0.8em;
+      background-image: url("btn1.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 6px;
+      margin: 2px;
+    }
+
+    button:hover {
+      background-image: url("btn2.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 6px;
+      margin: 2px;
+    }
+
+    div#window {
+      width: 390px;
+      height: 550px;
+      margin: auto;
+      background-image: url("grey-stone-minecraft-pattern_thumb.jpg");
+      background-color: gray;
+      border: 2px double white;
+      position: relative;
+      text-align: left;
+    }
+
+    #b1,
+    #b2,
+    #b3,
+    #b4,
+    #b5,
+    #b6,
+    #b7,
+    #b8,
+    #b9,
+    #b10,
+    #b11,
+    #b12,
+    #b13,
+    #b14,
+    #b15,
+    #b16,
+    #b17,
+    #b18,
+    #b19,
+    #b20,
+    #b21,
+    #b22,
+    #b23,
+    #b24,
+    #b25,
+    #b26,
+    #b27,
+    #b28 {
+      width: 50px;
+      position: absolute;
+    }
+
+    #ball {
+      width: 30px;
+      position: absolute;
+    }
+
+    #paddle {
+      width: 100px;
+      position: absolute;
+      filter: brightness(3);
+    }
+  </style>
+  <script src="library.js"></script>
+</head>
+
+<body onkeydown="keys();">
+  <div id="window">
+    <!--first row-->
+    <img id="b1" src="12974105-timantti_l.jpg" alt="diamond blocks" style="top: 5px; left: 5px; visibility: visible;">
+    <img id="b2" src="12974105-timantti_l.jpg" alt="diamond blocks" style="top: 5px; left: 60px; visibility: visible;">
+    <img id="b3" src="12974105-timantti_l.jpg" alt="diamond blocks" style="top: 5px; left: 115px; visibility: visible;">
+    <img id="b4" src="12974105-timantti_l.jpg" alt="diamond blocks" style="top: 5px; left: 170px; visibility: visible;">
+    <img id="b5" src="12974105-timantti_l.jpg" alt="diamond blocks" style="top: 5px; left: 225px; visibility: visible;">
+    <img id="b6" src="12974105-timantti_l.jpg" alt="diamond blocks" style="top: 5px; left: 280px; visibility: visible;">
+    <img id="b7" src="12974105-timantti_l.jpg" alt="diamond blocks" style="top: 5px; left: 335px; visibility: visible;">
+
+    <!--second row-->
+    <img id="b8" src="gold_ore.png" alt="gold blocks" style="top: 60px; left: 5px; visibility: visible;">
+    <img id="b9" src="gold_ore.png" alt="gold blocks" style="top: 60px; left: 60px; visibility: visible;">
+    <img id="b10" src="gold_ore.png" alt="gold blocks" style="top: 60px; left: 115px; visibility: visible;">
+    <img id="b11" src="gold_ore.png" alt="gold blocks" style="top: 60px; left: 170px; visibility: visible;">
+    <img id="b12" src="gold_ore.png" alt="gold blocks" style="top: 60px; left: 225px; visibility: visible;">
+    <img id="b13" src="gold_ore.png" alt="gold blocks" style="top: 60px; left: 280px; visibility: visible;">
+    <img id="b14" src="gold_ore.png" alt="gold blocks" style="top: 60px; left: 335px; visibility: visible;">
+
+    <!--third row-->
+    <img id="b15" src="image_2021-05-13_220209.png" alt="iron blocks" style="top: 115px; left: 5px; visibility: visible;">
+    <img id="b16" src="image_2021-05-13_220209.png" alt="iron blocks" style="top: 115px; left: 60px; visibility: visible;">
+    <img id="b17" src="image_2021-05-13_220209.png" alt="iron blocks" style="top: 115px; left: 115px; visibility: visible;">
+    <img id="b18" src="image_2021-05-13_220209.png" alt="iron blocks" style="top: 115px; left: 170px; visibility: visible;">
+    <img id="b19" src="image_2021-05-13_220209.png" alt="iron blocks" style="top: 115px; left: 225px; visibility: visible;">
+    <img id="b20" src="image_2021-05-13_220209.png" alt="iron blocks" style="top: 115px; left: 280px; visibility: visible;">
+    <img id="b21" src="image_2021-05-13_220209.png" alt="iron blocks" style="top: 115px; left: 335px; visibility: visible;">
+
+    <!--fourth row-->
+    <img id="b22" src="block.png" alt="coal blocks" style="top: 170px; left: 5px; visibility: visible;">
+    <img id="b23" src="block.png" alt="coal blocks" style="top: 170px; left: 60px; visibility: visible;">
+    <img id="b24" src="block.png" alt="coal blocks" style="top: 170px; left: 115px; visibility: visible;">
+    <img id="b25" src="block.png" alt="coal blocks" style="top: 170px; left: 170px; visibility: visible;">
+    <img id="b26" src="block.png" alt="coal blocks" style="top: 170px; left: 225px; visibility: visible;">
+    <img id="b27" src="block.png" alt="coal blocks" style="top: 170px; left: 280px; visibility: visible;">
+    <img id="b28" src="block.png" alt="coal blocks" style="top: 170px; left: 335px; visibility: visible;">
+    <img id="ball" src="Minecraft-Steve-Head.jpg" alt="minecraft steve" style="top: 350px; left: 180px; visibility: visible;">
+    <img id="paddle" src="Hotbar.png" alt="minecraft hotbar" style="top: 530px; left: 145px;">
+  </div>
+  <span class="bg">Score: <span id="score">0</span></span><br>
+  <span class="bg">Lives: <span id="lives">3</span></span><br>
+  <button onclick="start(); audio.play();">Create World</button><br>
+  <button onclick="stop(); audio.play();">Pause Game</button><br>
+  <button onclick="restart(); audio.play();">Re-Create World</button><br>
+  <ul class="bg">
+    <li>Use <span class="emph">arrow keys</span> to move the paddle.</li>
+    <li>Be warned: the ball's bounces are <span class="emph">randomized</span>!</li>
+    <li>As you play, both your paddle and your ball will <span class="emph">speed up</span>.</li>
+    <li>If you <span class="emph">clear the full board</span>, the blocks will respawn and you'll <span class="emph">gain a life</span>.</li>
+    <li>Try to get as high a score as possible!</li><br>
+    <li>Press <span class="emph">"Create World"</span> to play the game.</li>
+    <li>Press <span class="emph">"Pause Game"</span> or your <span class="emph">escape key</span> to pause the game (and press <span class="emph">"Create World"</span> again to resume).</li>
+    <li>Press <span class="emph">"Re-Create World"</span> to reset the board.</li>
+  </ul>
+  <script>
+    var audio = new Audio('minecraft_click.wav');
+    var audio2 = new Audio('stone.wav');
+    var audio3 = new Audio('oof.wav');
+    var audio4 = new Audio('xp.wav');
+    var deltax = Math.round(Math.random()) * 2 - 1;
+    var deltay = Math.round(Math.random()) * 2 - 1;
+
+    var timerNum = null;
+
+    var speed = 10;
+
+    var score = 0;
+    var lives = 3;
+
+    function start() {
+      if (timerNum == null || timerNum2 == null) {
+        timerNum = setInterval("move()", speed);
+        timerNum2 = setInterval("paddling()", speed * 1.1);
+      }
+    }
+
+    function move() {
+      let x = parseInt(getCSS("ball", "left"));
+      x = x + deltax;
+      if (x > 360) {
+        x = 360;
+        deltax = -1;
+      }
+      else if (x < 0) {
+        x = 0;
+        deltax = 1;
+      }
+      setCSS("ball", "left", x + "px");
+
+      let y = parseInt(getCSS("ball", "top"));
+      y = y + deltay;
+      if (getCSS("b1", "visibility") == "hidden" && getCSS("b2", "visibility") == "hidden" && getCSS("b3", "visibility") == "hidden" && getCSS("b4", "visibility") == "hidden" && getCSS("b5", "visibility") == "hidden" && getCSS("b6", "visibility") == "hidden" && getCSS("b7", "visibility") == "hidden" && getCSS("b8", "visibility") == "hidden" && getCSS("b9", "visibility") == "hidden" && getCSS("b10", "visibility") == "hidden" && getCSS("b11", "visibility") == "hidden" && getCSS("b12", "visibility") == "hidden" && getCSS("b13", "visibility") == "hidden" && getCSS("b14", "visibility") == "hidden" && getCSS("b15", "visibility") == "hidden" && getCSS("b16", "visibility") == "hidden" && getCSS("b17", "visibility") == "hidden" && getCSS("b18", "visibility") == "hidden" && getCSS("b19", "visibility") == "hidden" && getCSS("b20", "visibility") == "hidden" && getCSS("b21", "visibility") == "hidden" && getCSS("b22", "visibility") == "hidden" && getCSS("b23", "visibility") == "hidden" && getCSS("b24", "visibility") == "hidden" && getCSS("b25", "visibility") == "hidden" && getCSS("b26", "visibility") == "hidden" && getCSS("b27", "visibility") == "hidden" && getCSS("b28", "visibility") == "hidden") {
+        setCSS("b1", "visibility", "visible");
+        setCSS("b2", "visibility", "visible");
+        setCSS("b3", "visibility", "visible");
+        setCSS("b4", "visibility", "visible");
+        setCSS("b5", "visibility", "visible");
+        setCSS("b6", "visibility", "visible");
+        setCSS("b7", "visibility", "visible");
+        setCSS("b8", "visibility", "visible");
+        setCSS("b9", "visibility", "visible");
+        setCSS("b10", "visibility", "visible");
+        setCSS("b11", "visibility", "visible");
+        setCSS("b12", "visibility", "visible");
+        setCSS("b13", "visibility", "visible");
+        setCSS("b14", "visibility", "visible");
+        setCSS("b15", "visibility", "visible");
+        setCSS("b16", "visibility", "visible");
+        setCSS("b17", "visibility", "visible");
+        setCSS("b18", "visibility", "visible");
+        setCSS("b19", "visibility", "visible");
+        setCSS("b20", "visibility", "visible");
+        setCSS("b21", "visibility", "visible");
+        setCSS("b22", "visibility", "visible");
+        setCSS("b23", "visibility", "visible");
+        setCSS("b24", "visibility", "visible");
+        setCSS("b25", "visibility", "visible");
+        setCSS("b26", "visibility", "visible");
+        setCSS("b27", "visibility", "visible");
+        setCSS("b28", "visibility", "visible");
+        audio4.play()
+        lives = lives + 1;
+        change("lives", lives);
+      }
+      else if (lives == 0) {
+        audio3.play();
+        alert("Game over! Out of lives! You got " + get("score") + " points!");
+        stop();
+        setCSS("paddle", "left", 145 + "px");
+        y = 350;
+        setCSS("ball", "top", y + "px");
+        setCSS("ball", "left", 180 + "px");
+        setCSS("ball", "visibility", "visible");
+      }
+      else if (y > 535 && lives != 0) {
+        setCSS("ball", "visibility", "hidden");
+        lives = lives - 1;
+        change("lives", lives);
+        audio3.play();
+        stop();
+        setCSS("paddle", "left", 145 + "px");
+        clearInterval(timerNum);
+        clearInterval(timerNum2);
+        speed = 10;
+        timerNum = setInterval("move()", speed);
+        timerNum2 = setInterval("paddling()", speed * 1.1);
+        y = 350;
+        setCSS("ball", "left", 180 + "px");
+        setCSS("ball", "visibility", "visible");
+        alert("Uh oh! " + lives + " lives left!")
+        start();
+      }
+      else if (y < 0 && lives != 0) {
+        y = 0;
+        deltay = 1;
+      }
+      else if (collision("paddle", "ball") == true) {
+        deltax = Math.round(Math.random()) * 2 - 1;
+        deltay = -1;
+        clearInterval(timerNum);
+        speed = speed - 0.01;
+        timerNum = setInterval("move()", speed);
+      }
+      else {
+        // time to code deletion of blocks; these are diamond
+        if (getCSS("b1", "visibility") == "visible" && collision("ball", "b1") == true) {
+          setCSS("b1", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(9);
+        }
+
+        if (getCSS("b2", "visibility") == "visible" && collision("ball", "b2") == true) {
+          setCSS("b2", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(9);
+        }
+
+        if (getCSS("b3", "visibility") == "visible" && collision("ball", "b3") == true) {
+          setCSS("b3", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(9);
+        }
+
+        if (getCSS("b4", "visibility") == "visible" && collision("ball", "b4") == true) {
+          setCSS("b4", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(9);
+        }
+
+        if (getCSS("b5", "visibility") == "visible" && collision("ball", "b5") == true) {
+          setCSS("b5", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(9);
+        }
+
+        if (getCSS("b6", "visibility") == "visible" && collision("ball", "b6") == true) {
+          setCSS("b6", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(9);
+        }
+
+        if (getCSS("b7", "visibility") == "visible" && collision("ball", "b7") == true) {
+          setCSS("b7", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(9);
+        }
+        // gold blocks
+        if (getCSS("b8", "visibility") == "visible" && collision("ball", "b8") == true) {
+          setCSS("b8", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(7);
+        }
+
+        if (getCSS("b9", "visibility") == "visible" && collision("ball", "b9") == true) {
+          setCSS("b9", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(7);
+        }
+
+        if (getCSS("b10", "visibility") == "visible" && collision("ball", "b10") == true) {
+          setCSS("b10", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(7);
+        }
+
+        if (getCSS("b11", "visibility") == "visible" && collision("ball", "b11") == true) {
+          setCSS("b11", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(7);
+        }
+
+        if (getCSS("b12", "visibility") == "visible" && collision("ball", "b12") == true) {
+          setCSS("b12", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(7);
+        }
+
+        if (getCSS("b13", "visibility") == "visible" && collision("ball", "b13") == true) {
+          setCSS("b13", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(7);
+        }
+
+        if (getCSS("b14", "visibility") == "visible" && collision("ball", "b14") == true) {
+          setCSS("b14", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(7);
+        }
+        // iron blocks
+        if (getCSS("b15", "visibility") == "visible" && collision("ball", "b15") == true) {
+          setCSS("b15", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(5);
+        }
+
+        if (getCSS("b16", "visibility") == "visible" && collision("ball", "b16") == true) {
+          setCSS("b16", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(5);
+        }
+
+        if (getCSS("b17", "visibility") == "visible" && collision("ball", "b17") == true) {
+          setCSS("b17", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(5);
+        }
+
+        if (getCSS("b18", "visibility") == "visible" && collision("ball", "b18") == true) {
+          setCSS("b18", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(5);
+        }
+
+        if (getCSS("b19", "visibility") == "visible" && collision("ball", "b19") == true) {
+          setCSS("b19", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(5);
+        }
+
+        if (getCSS("b20", "visibility") == "visible" && collision("ball", "b20") == true) {
+          setCSS("b20", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(5);
+        }
+
+        if (getCSS("b21", "visibility") == "visible" && collision("ball", "b21") == true) {
+          setCSS("b21", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(5);
+        }
+        // coal blocks
+        if (getCSS("b22", "visibility") == "visible" && collision("ball", "b22") == true) {
+          setCSS("b22", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(3);
+        }
+
+        if (getCSS("b23", "visibility") == "visible" && collision("ball", "b23") == true) {
+          setCSS("b23", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(3);
+        }
+
+        if (getCSS("b24", "visibility") == "visible" && collision("ball", "b24") == true) {
+          setCSS("b24", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(3);
+        }
+
+        if (getCSS("b25", "visibility") == "visible" && collision("ball", "b25") == true) {
+          setCSS("b25", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(3);
+        }
+
+        if (getCSS("b26", "visibility") == "visible" && collision("ball", "b26") == true) {
+          setCSS("b26", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(3);
+        }
+
+        if (getCSS("b27", "visibility") == "visible" && collision("ball", "b27") == true) {
+          setCSS("b27", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(3);
+        }
+
+        if (getCSS("b28", "visibility") == "visible" && collision("ball", "b28") == true) {
+          setCSS("b28", "visibility", "hidden");
+          deltax = Math.round(Math.random()) * 2 - 1;
+          deltay = Math.round(Math.random()) * 2 - 1;
+          countPoint(3);
+        }
+      }
+      setCSS("ball", "top", y + "px");
+    }
+
+    function countPoint(n1) {
+      if (timerNum != null) {
+        let score = parseInt(get("score"));
+        score = score + Math.ceil(n1 * Math.random());
+        change("score", score);
+        clearInterval(timerNum);
+        clearInterval(timerNum2);
+        speed = speed - 0.5;
+        timerNum = setInterval("move()", speed);
+        timerNum2 = setInterval("paddling()", speed * 1.1);
+        audio2.play();
+      }
+      if (timerNum == null) {
+        alert("Start the game first!");
+      }
+    }
+
+    function stop() {
+      if (timerNum != null || timerNum2 != null) {
+        clearInterval(timerNum);
+        clearInterval(timerNum2);
+        timerNum = null;
+        timerNum2 = null;
+        key = -1;
+      }
+    }
+
+    function restart() {
+      stop();
+
+      deltax = Math.round(Math.random()) * 2 - 1;
+      deltay = Math.round(Math.random()) * 2 - 1;
+
+      speed = 10;
+
+      timerNum = null;
+      timerNum2 = setInterval("paddling()", speed * 1.1);
+
+      score = 0;
+      lives = 3;
+
+      setCSS("b1", "visibility", "visible");
+      setCSS("b2", "visibility", "visible");
+      setCSS("b3", "visibility", "visible");
+      setCSS("b4", "visibility", "visible");
+      setCSS("b5", "visibility", "visible");
+      setCSS("b6", "visibility", "visible");
+      setCSS("b7", "visibility", "visible");
+      setCSS("b8", "visibility", "visible");
+      setCSS("b9", "visibility", "visible");
+      setCSS("b10", "visibility", "visible");
+      setCSS("b11", "visibility", "visible");
+      setCSS("b12", "visibility", "visible");
+      setCSS("b13", "visibility", "visible");
+      setCSS("b14", "visibility", "visible");
+      setCSS("b15", "visibility", "visible");
+      setCSS("b16", "visibility", "visible");
+      setCSS("b17", "visibility", "visible");
+      setCSS("b18", "visibility", "visible");
+      setCSS("b19", "visibility", "visible");
+      setCSS("b20", "visibility", "visible");
+      setCSS("b21", "visibility", "visible");
+      setCSS("b22", "visibility", "visible");
+      setCSS("b23", "visibility", "visible");
+      setCSS("b24", "visibility", "visible");
+      setCSS("b25", "visibility", "visible");
+      setCSS("b26", "visibility", "visible");
+      setCSS("b27", "visibility", "visible");
+      setCSS("b28", "visibility", "visible");
+
+      setCSS("ball", "top", 350 + "px");
+      setCSS("ball", "left", 180 + "px");
+      setCSS("ball", "visibility", "visible");
+      change("score", score);
+      change("lives", lives);
+    }
+
+    var key = -1;
+
+    function keys() {
+      // get key code and store in global variable - that's all
+      key = event.keyCode;
+    }
+
+    function paddling() {
+      // get the current position
+      var xpad = getCSS("paddle", "left");
+      xpad = parseInt(xpad);
+
+      // check global variable to see which way to move
+
+      // move right
+      if (key == 39) {
+        xpad = xpad + 1;
+      }
+
+      // move left
+      else if (key == 37) {
+        xpad = xpad - 1;
+      }
+
+      // Pause?
+      else if (key == 27) {
+        stop();
+      }
+
+      if (xpad < 0) {
+        xpad = 0;
+      }
+
+      else if (xpad > 290) {
+        xpad = 290;
+      }
+
+      // update to new location
+      setCSS("paddle", "left", xpad + "px");
+    }
+    var timerNum2 = setInterval("paddling()", speed * 1.1);
+  </script>
+</body>
+
+</html>
