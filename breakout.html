@@ -116,7 +116,7 @@
   <script src="src/js/library.js"></script>
 </head>
 
-<body onkeydown="keys();">
+<body onkeydown="keys()" onkeyup="releaseKeys()">
   <div id="window">
     <!--first row-->
     <img id="b1" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
@@ -573,6 +573,10 @@
     function keys() {
       // get key code and store in global variable - that's all
       key = event.keyCode;
+    }
+
+    function releaseKeys() {
+      key = -1;
     }
 
     function paddling() {
