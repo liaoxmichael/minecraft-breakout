@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <style>
     body {
-      background-image: url("171177.jpg");
+      background-image: url("assets/images/site_background.jpg");
       background-repeat: no-repeat;
       background-size: cover;
       font-family: 'VT323', monospace;
@@ -44,7 +44,7 @@
       color: white;
       font-family: 'VT323', monospace;
       font-size: 0.8em;
-      background-image: url("btn1.png");
+      background-image: url("assets/images/button.png");
       background-repeat: no-repeat;
       background-size: cover;
       padding: 6px;
@@ -52,7 +52,7 @@
     }
 
     button:hover {
-      background-image: url("btn2.png");
+      background-image: url("assets/images/button_hover.png");
       background-repeat: no-repeat;
       background-size: cover;
       padding: 6px;
@@ -63,7 +63,7 @@
       width: 390px;
       height: 550px;
       margin: auto;
-      background-image: url("grey-stone-minecraft-pattern_thumb.jpg");
+      background-image: url("assets/images/stone_pattern_background.jpg");
       background-color: gray;
       border: 2px double white;
       position: relative;
@@ -113,48 +113,56 @@
       filter: brightness(3);
     }
   </style>
-  <script src="library.js"></script>
+  <script src="src/js/library.js"></script>
 </head>
 
 <body onkeydown="keys();">
   <div id="window">
     <!--first row-->
-    <img id="b1" src="12974105-timantti_l.jpg" alt="diamond blocks" style="top: 5px; left: 5px; visibility: visible;">
-    <img id="b2" src="12974105-timantti_l.jpg" alt="diamond blocks" style="top: 5px; left: 60px; visibility: visible;">
-    <img id="b3" src="12974105-timantti_l.jpg" alt="diamond blocks" style="top: 5px; left: 115px; visibility: visible;">
-    <img id="b4" src="12974105-timantti_l.jpg" alt="diamond blocks" style="top: 5px; left: 170px; visibility: visible;">
-    <img id="b5" src="12974105-timantti_l.jpg" alt="diamond blocks" style="top: 5px; left: 225px; visibility: visible;">
-    <img id="b6" src="12974105-timantti_l.jpg" alt="diamond blocks" style="top: 5px; left: 280px; visibility: visible;">
-    <img id="b7" src="12974105-timantti_l.jpg" alt="diamond blocks" style="top: 5px; left: 335px; visibility: visible;">
+    <img id="b1" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
+      style="top: 5px; left: 5px; visibility: visible;">
+    <img id="b2" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
+      style="top: 5px; left: 60px; visibility: visible;">
+    <img id="b3" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
+      style="top: 5px; left: 115px; visibility: visible;">
+    <img id="b4" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
+      style="top: 5px; left: 170px; visibility: visible;">
+    <img id="b5" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
+      style="top: 5px; left: 225px; visibility: visible;">
+    <img id="b6" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
+      style="top: 5px; left: 280px; visibility: visible;">
+    <img id="b7" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
+      style="top: 5px; left: 335px; visibility: visible;">
 
     <!--second row-->
-    <img id="b8" src="gold_ore.png" alt="gold blocks" style="top: 60px; left: 5px; visibility: visible;">
-    <img id="b9" src="gold_ore.png" alt="gold blocks" style="top: 60px; left: 60px; visibility: visible;">
-    <img id="b10" src="gold_ore.png" alt="gold blocks" style="top: 60px; left: 115px; visibility: visible;">
-    <img id="b11" src="gold_ore.png" alt="gold blocks" style="top: 60px; left: 170px; visibility: visible;">
-    <img id="b12" src="gold_ore.png" alt="gold blocks" style="top: 60px; left: 225px; visibility: visible;">
-    <img id="b13" src="gold_ore.png" alt="gold blocks" style="top: 60px; left: 280px; visibility: visible;">
-    <img id="b14" src="gold_ore.png" alt="gold blocks" style="top: 60px; left: 335px; visibility: visible;">
+    <img id="b8" src="assets/images/gold_ore.png" alt="gold blocks" style="top: 60px; left: 5px; visibility: visible;">
+    <img id="b9" src="assets/images/gold_ore.png" alt="gold blocks" style="top: 60px; left: 60px; visibility: visible;">
+    <img id="b10" src="assets/images/gold_ore.png" alt="gold blocks" style="top: 60px; left: 115px; visibility: visible;">
+    <img id="b11" src="assets/images/gold_ore.png" alt="gold blocks" style="top: 60px; left: 170px; visibility: visible;">
+    <img id="b12" src="assets/images/gold_ore.png" alt="gold blocks" style="top: 60px; left: 225px; visibility: visible;">
+    <img id="b13" src="assets/images/gold_ore.png" alt="gold blocks" style="top: 60px; left: 280px; visibility: visible;">
+    <img id="b14" src="assets/images/gold_ore.png" alt="gold blocks" style="top: 60px; left: 335px; visibility: visible;">
 
     <!--third row-->
-    <img id="b15" src="image_2021-05-13_220209.png" alt="iron blocks" style="top: 115px; left: 5px; visibility: visible;">
-    <img id="b16" src="image_2021-05-13_220209.png" alt="iron blocks" style="top: 115px; left: 60px; visibility: visible;">
-    <img id="b17" src="image_2021-05-13_220209.png" alt="iron blocks" style="top: 115px; left: 115px; visibility: visible;">
-    <img id="b18" src="image_2021-05-13_220209.png" alt="iron blocks" style="top: 115px; left: 170px; visibility: visible;">
-    <img id="b19" src="image_2021-05-13_220209.png" alt="iron blocks" style="top: 115px; left: 225px; visibility: visible;">
-    <img id="b20" src="image_2021-05-13_220209.png" alt="iron blocks" style="top: 115px; left: 280px; visibility: visible;">
-    <img id="b21" src="image_2021-05-13_220209.png" alt="iron blocks" style="top: 115px; left: 335px; visibility: visible;">
+    <img id="b15" src="assets/images/iron_ore.png" alt="iron blocks" style="top: 115px; left: 5px; visibility: visible;">
+    <img id="b16" src="assets/images/iron_ore.png" alt="iron blocks" style="top: 115px; left: 60px; visibility: visible;">
+    <img id="b17" src="assets/images/iron_ore.png" alt="iron blocks" style="top: 115px; left: 115px; visibility: visible;">
+    <img id="b18" src="assets/images/iron_ore.png" alt="iron blocks" style="top: 115px; left: 170px; visibility: visible;">
+    <img id="b19" src="assets/images/iron_ore.png" alt="iron blocks" style="top: 115px; left: 225px; visibility: visible;">
+    <img id="b20" src="assets/images/iron_ore.png" alt="iron blocks" style="top: 115px; left: 280px; visibility: visible;">
+    <img id="b21" src="assets/images/iron_ore.png" alt="iron blocks" style="top: 115px; left: 335px; visibility: visible;">
 
     <!--fourth row-->
-    <img id="b22" src="block.png" alt="coal blocks" style="top: 170px; left: 5px; visibility: visible;">
-    <img id="b23" src="block.png" alt="coal blocks" style="top: 170px; left: 60px; visibility: visible;">
-    <img id="b24" src="block.png" alt="coal blocks" style="top: 170px; left: 115px; visibility: visible;">
-    <img id="b25" src="block.png" alt="coal blocks" style="top: 170px; left: 170px; visibility: visible;">
-    <img id="b26" src="block.png" alt="coal blocks" style="top: 170px; left: 225px; visibility: visible;">
-    <img id="b27" src="block.png" alt="coal blocks" style="top: 170px; left: 280px; visibility: visible;">
-    <img id="b28" src="block.png" alt="coal blocks" style="top: 170px; left: 335px; visibility: visible;">
-    <img id="ball" src="Minecraft-Steve-Head.jpg" alt="minecraft steve" style="top: 350px; left: 180px; visibility: visible;">
-    <img id="paddle" src="Hotbar.png" alt="minecraft hotbar" style="top: 530px; left: 145px;">
+    <img id="b22" src="assets/images/coal_ore.png" alt="coal blocks" style="top: 170px; left: 5px; visibility: visible;">
+    <img id="b23" src="assets/images/coal_ore.png" alt="coal blocks" style="top: 170px; left: 60px; visibility: visible;">
+    <img id="b24" src="assets/images/coal_ore.png" alt="coal blocks" style="top: 170px; left: 115px; visibility: visible;">
+    <img id="b25" src="assets/images/coal_ore.png" alt="coal blocks" style="top: 170px; left: 170px; visibility: visible;">
+    <img id="b26" src="assets/images/coal_ore.png" alt="coal blocks" style="top: 170px; left: 225px; visibility: visible;">
+    <img id="b27" src="assets/images/coal_ore.png" alt="coal blocks" style="top: 170px; left: 280px; visibility: visible;">
+    <img id="b28" src="assets/images/coal_ore.png" alt="coal blocks" style="top: 170px; left: 335px; visibility: visible;">
+    <img id="ball" src="assets/images/steve_head.jpg" alt="minecraft steve"
+      style="top: 350px; left: 180px; visibility: visible;">
+    <img id="paddle" src="assets/images/hotbar.png" alt="minecraft hotbar" style="top: 530px; left: 145px;">
   </div>
   <span class="bg">Score: <span id="score">0</span></span><br>
   <span class="bg">Lives: <span id="lives">3</span></span><br>
@@ -165,17 +173,19 @@
     <li>Use <span class="emph">arrow keys</span> to move the paddle.</li>
     <li>Be warned: the ball's bounces are <span class="emph">randomized</span>!</li>
     <li>As you play, both your paddle and your ball will <span class="emph">speed up</span>.</li>
-    <li>If you <span class="emph">clear the full board</span>, the blocks will respawn and you'll <span class="emph">gain a life</span>.</li>
+    <li>If you <span class="emph">clear the full board</span>, the blocks will respawn and you'll <span
+        class="emph">gain a life</span>.</li>
     <li>Try to get as high a score as possible!</li><br>
     <li>Press <span class="emph">"Create World"</span> to play the game.</li>
-    <li>Press <span class="emph">"Pause Game"</span> or your <span class="emph">escape key</span> to pause the game (and press <span class="emph">"Create World"</span> again to resume).</li>
+    <li>Press <span class="emph">"Pause Game"</span> or your <span class="emph">escape key</span> to pause the game (and
+      press <span class="emph">"Create World"</span> again to resume).</li>
     <li>Press <span class="emph">"Re-Create World"</span> to reset the board.</li>
   </ul>
   <script>
-    var audio = new Audio('minecraft_click.wav');
-    var audio2 = new Audio('stone.wav');
-    var audio3 = new Audio('oof.wav');
-    var audio4 = new Audio('xp.wav');
+    var audio = new Audio('assets/audio/minecraft_click.wav');
+    var audio2 = new Audio('assets/audio/stone.wav');
+    var audio3 = new Audio('assets/audio/oof.wav');
+    var audio4 = new Audio('assets/audio/xp.wav');
     var deltax = Math.round(Math.random()) * 2 - 1;
     var deltay = Math.round(Math.random()) * 2 - 1;
 
