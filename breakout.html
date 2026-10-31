@@ -127,7 +127,7 @@
       -webkit-user-select: none;
       user-select: none;
       -webkit-user-drag: none;
-      pointer-events: none;
+      pointer-events: auto;
     }
 
     #left-button {
@@ -153,7 +153,7 @@
 
 <body onkeydown="keys()" onkeyup="releaseKeys()">
   <div id="game-container">
-    <img src="assets/images/left_button.png" class="mobile-control" id="left-button" onmousedown="moveLeft()" onmouseup="releaseKeys()">
+    <img src="assets/images/left_button.png" class="mobile-control" id="left-button" onpointerdown="moveLeft()" onpointerup="releaseKeys()">
     <div id="window">
       <!--first row-->
       <img id="b1" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
@@ -222,7 +222,7 @@
         style="top: 350px; left: 180px; visibility: visible;">
       <img id="paddle" src="assets/images/hotbar.png" alt="minecraft hotbar" style="top: 530px; left: 145px;">
     </div>
-    <img src="assets/images/right_button.png" class="mobile-control" id="right-button" onmousedown="moveRight()" onmouseup="releaseKeys()">
+    <img src="assets/images/right_button.png" class="mobile-control" id="right-button" onpointerdown="moveRight()" onpointerup="releaseKeys()">
     <div id="menu-items">
       <span class="bg">Score: <span id="score">0</span></span><br>
       <span class="bg">Lives: <span id="lives">3</span></span><br>
