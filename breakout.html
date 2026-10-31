@@ -68,6 +68,7 @@
       border: 2px double white;
       position: relative;
       text-align: left;
+      grid-column: 2;
     }
 
     #b1,
@@ -112,63 +113,119 @@
       position: absolute;
       filter: brightness(3);
     }
+
+    #game-container {
+      display: grid;
+      justify-content: center;
+      align-items: end;
+      width: 100%;
+    }
+
+    .mobile-control {
+      display: none;
+    }
+
+    #left-button {
+      grid-column: 1;
+    }
+
+    #right-button {
+      grid-column: 3;
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+      .mobile-control {
+        display: block;
+      }
+    }
+
+    #menu-items {
+      grid-column: 2;
+    }
   </style>
   <script src="src/js/library.js"></script>
 </head>
 
 <body onkeydown="keys()" onkeyup="releaseKeys()">
-  <div id="window">
-    <!--first row-->
-    <img id="b1" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
-      style="top: 5px; left: 5px; visibility: visible;">
-    <img id="b2" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
-      style="top: 5px; left: 60px; visibility: visible;">
-    <img id="b3" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
-      style="top: 5px; left: 115px; visibility: visible;">
-    <img id="b4" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
-      style="top: 5px; left: 170px; visibility: visible;">
-    <img id="b5" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
-      style="top: 5px; left: 225px; visibility: visible;">
-    <img id="b6" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
-      style="top: 5px; left: 280px; visibility: visible;">
-    <img id="b7" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
-      style="top: 5px; left: 335px; visibility: visible;">
+  <div id="game-container">
+    <img src="assets/images/left_button.png" class="mobile-control" id="left-button" onmousedown="moveLeft()" onmouseup="releaseKeys()">
+    <div id="window">
+      <!--first row-->
+      <img id="b1" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
+        style="top: 5px; left: 5px; visibility: visible;">
+      <img id="b2" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
+        style="top: 5px; left: 60px; visibility: visible;">
+      <img id="b3" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
+        style="top: 5px; left: 115px; visibility: visible;">
+      <img id="b4" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
+        style="top: 5px; left: 170px; visibility: visible;">
+      <img id="b5" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
+        style="top: 5px; left: 225px; visibility: visible;">
+      <img id="b6" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
+        style="top: 5px; left: 280px; visibility: visible;">
+      <img id="b7" src="assets/images/diamond_ore.jpg" alt="diamond blocks"
+        style="top: 5px; left: 335px; visibility: visible;">
 
-    <!--second row-->
-    <img id="b8" src="assets/images/gold_ore.png" alt="gold blocks" style="top: 60px; left: 5px; visibility: visible;">
-    <img id="b9" src="assets/images/gold_ore.png" alt="gold blocks" style="top: 60px; left: 60px; visibility: visible;">
-    <img id="b10" src="assets/images/gold_ore.png" alt="gold blocks" style="top: 60px; left: 115px; visibility: visible;">
-    <img id="b11" src="assets/images/gold_ore.png" alt="gold blocks" style="top: 60px; left: 170px; visibility: visible;">
-    <img id="b12" src="assets/images/gold_ore.png" alt="gold blocks" style="top: 60px; left: 225px; visibility: visible;">
-    <img id="b13" src="assets/images/gold_ore.png" alt="gold blocks" style="top: 60px; left: 280px; visibility: visible;">
-    <img id="b14" src="assets/images/gold_ore.png" alt="gold blocks" style="top: 60px; left: 335px; visibility: visible;">
+      <!--second row-->
+      <img id="b8" src="assets/images/gold_ore.png" alt="gold blocks"
+        style="top: 60px; left: 5px; visibility: visible;">
+      <img id="b9" src="assets/images/gold_ore.png" alt="gold blocks"
+        style="top: 60px; left: 60px; visibility: visible;">
+      <img id="b10" src="assets/images/gold_ore.png" alt="gold blocks"
+        style="top: 60px; left: 115px; visibility: visible;">
+      <img id="b11" src="assets/images/gold_ore.png" alt="gold blocks"
+        style="top: 60px; left: 170px; visibility: visible;">
+      <img id="b12" src="assets/images/gold_ore.png" alt="gold blocks"
+        style="top: 60px; left: 225px; visibility: visible;">
+      <img id="b13" src="assets/images/gold_ore.png" alt="gold blocks"
+        style="top: 60px; left: 280px; visibility: visible;">
+      <img id="b14" src="assets/images/gold_ore.png" alt="gold blocks"
+        style="top: 60px; left: 335px; visibility: visible;">
 
-    <!--third row-->
-    <img id="b15" src="assets/images/iron_ore.png" alt="iron blocks" style="top: 115px; left: 5px; visibility: visible;">
-    <img id="b16" src="assets/images/iron_ore.png" alt="iron blocks" style="top: 115px; left: 60px; visibility: visible;">
-    <img id="b17" src="assets/images/iron_ore.png" alt="iron blocks" style="top: 115px; left: 115px; visibility: visible;">
-    <img id="b18" src="assets/images/iron_ore.png" alt="iron blocks" style="top: 115px; left: 170px; visibility: visible;">
-    <img id="b19" src="assets/images/iron_ore.png" alt="iron blocks" style="top: 115px; left: 225px; visibility: visible;">
-    <img id="b20" src="assets/images/iron_ore.png" alt="iron blocks" style="top: 115px; left: 280px; visibility: visible;">
-    <img id="b21" src="assets/images/iron_ore.png" alt="iron blocks" style="top: 115px; left: 335px; visibility: visible;">
+      <!--third row-->
+      <img id="b15" src="assets/images/iron_ore.png" alt="iron blocks"
+        style="top: 115px; left: 5px; visibility: visible;">
+      <img id="b16" src="assets/images/iron_ore.png" alt="iron blocks"
+        style="top: 115px; left: 60px; visibility: visible;">
+      <img id="b17" src="assets/images/iron_ore.png" alt="iron blocks"
+        style="top: 115px; left: 115px; visibility: visible;">
+      <img id="b18" src="assets/images/iron_ore.png" alt="iron blocks"
+        style="top: 115px; left: 170px; visibility: visible;">
+      <img id="b19" src="assets/images/iron_ore.png" alt="iron blocks"
+        style="top: 115px; left: 225px; visibility: visible;">
+      <img id="b20" src="assets/images/iron_ore.png" alt="iron blocks"
+        style="top: 115px; left: 280px; visibility: visible;">
+      <img id="b21" src="assets/images/iron_ore.png" alt="iron blocks"
+        style="top: 115px; left: 335px; visibility: visible;">
 
-    <!--fourth row-->
-    <img id="b22" src="assets/images/coal_ore.png" alt="coal blocks" style="top: 170px; left: 5px; visibility: visible;">
-    <img id="b23" src="assets/images/coal_ore.png" alt="coal blocks" style="top: 170px; left: 60px; visibility: visible;">
-    <img id="b24" src="assets/images/coal_ore.png" alt="coal blocks" style="top: 170px; left: 115px; visibility: visible;">
-    <img id="b25" src="assets/images/coal_ore.png" alt="coal blocks" style="top: 170px; left: 170px; visibility: visible;">
-    <img id="b26" src="assets/images/coal_ore.png" alt="coal blocks" style="top: 170px; left: 225px; visibility: visible;">
-    <img id="b27" src="assets/images/coal_ore.png" alt="coal blocks" style="top: 170px; left: 280px; visibility: visible;">
-    <img id="b28" src="assets/images/coal_ore.png" alt="coal blocks" style="top: 170px; left: 335px; visibility: visible;">
-    <img id="ball" src="assets/images/steve_head.jpg" alt="minecraft steve"
-      style="top: 350px; left: 180px; visibility: visible;">
-    <img id="paddle" src="assets/images/hotbar.png" alt="minecraft hotbar" style="top: 530px; left: 145px;">
+      <!--fourth row-->
+      <img id="b22" src="assets/images/coal_ore.png" alt="coal blocks"
+        style="top: 170px; left: 5px; visibility: visible;">
+      <img id="b23" src="assets/images/coal_ore.png" alt="coal blocks"
+        style="top: 170px; left: 60px; visibility: visible;">
+      <img id="b24" src="assets/images/coal_ore.png" alt="coal blocks"
+        style="top: 170px; left: 115px; visibility: visible;">
+      <img id="b25" src="assets/images/coal_ore.png" alt="coal blocks"
+        style="top: 170px; left: 170px; visibility: visible;">
+      <img id="b26" src="assets/images/coal_ore.png" alt="coal blocks"
+        style="top: 170px; left: 225px; visibility: visible;">
+      <img id="b27" src="assets/images/coal_ore.png" alt="coal blocks"
+        style="top: 170px; left: 280px; visibility: visible;">
+      <img id="b28" src="assets/images/coal_ore.png" alt="coal blocks"
+        style="top: 170px; left: 335px; visibility: visible;">
+      <img id="ball" src="assets/images/steve_head.jpg" alt="minecraft steve"
+        style="top: 350px; left: 180px; visibility: visible;">
+      <img id="paddle" src="assets/images/hotbar.png" alt="minecraft hotbar" style="top: 530px; left: 145px;">
+    </div>
+    <img src="assets/images/right_button.png" class="mobile-control" id="right-button" onmousedown="moveRight()" onmouseup="releaseKeys()">
+    <div id="menu-items">
+      <span class="bg">Score: <span id="score">0</span></span><br>
+      <span class="bg">Lives: <span id="lives">3</span></span><br>
+      <button onclick="start(); audio.play();">Create World</button><br>
+      <button onclick="stop(); audio.play();">Pause Game</button><br>
+      <button onclick="restart(); audio.play();">Re-Create World</button><br>
+    </div>
   </div>
-  <span class="bg">Score: <span id="score">0</span></span><br>
-  <span class="bg">Lives: <span id="lives">3</span></span><br>
-  <button onclick="start(); audio.play();">Create World</button><br>
-  <button onclick="stop(); audio.play();">Pause Game</button><br>
-  <button onclick="restart(); audio.play();">Re-Create World</button><br>
   <ul class="bg">
     <li>Use <span class="emph">arrow keys</span> to move the paddle.</li>
     <li>Be warned: the ball's bounces are <span class="emph">randomized</span>!</li>
@@ -577,6 +634,14 @@
 
     function releaseKeys() {
       key = -1;
+    }
+
+    function moveLeft() {
+      key = 37;
+    }
+
+    function moveRight() {
+      key = 39;
     }
 
     function paddling() {
